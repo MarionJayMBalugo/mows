@@ -1,0 +1,47 @@
+
+.container-fluid{	
+	background-color:#fcd134;
+	width:90%;
+	margin-top: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.shadow-lg{
+	text-align: center;
+	
+	background-color:#fde899;
+	width: 100%;
+	height: 99%;
+	margin: auto;
+}
+#publisher,#Subscriber{
+	background-color: #fcda5c;	
+}
+button{
+	width: 100px;
+	margin-top: 10px;
+}
+.shadow-lg {
+	padding:5px; 
+}
+.btn{
+	background-color:#d6d3c5;
+	margin-bottom: 10px;
+
+}
+input{
+	margin-top: 10px;
+}
+#status{
+	
+	margin-top: 10px;	
+	width: 200px;
+	border: solid #d6d3c5 1px;
+	height: 30px;
+}
+#status{
+	color: #8e8d83;
+}
+h1{
+   font-size: 
+}

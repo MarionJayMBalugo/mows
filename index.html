@@ -1,70 +1,47 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>mows</title>
+  <title>MQTT</title>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
 </head>
-<style>
-  *{
-    text-align: center;
-  }
-  .broker,.publisher,.subscriber,#publisherHistory{
-    margin: auto;
-    width: 50%;
-    height: 300px;
-    background-color: skyblue;
-  }
-  button{
-    width: 150PX;
-  }
-  input{
-    text-align: left;
-    width: 300px;
-  }
-  #status{
-    margin: auto;
-    width: 100px;
-    height:20px;
-    background-color:white;
-  }
-  #publisherHistory{
-    
-    width: 250px;
-    height: 250px;
-    overflow: scroll;
-    background-color: aqua;
-  }
+<link rel="stylesheet" type="text/css" href="index.css">
+
 </style>
-
-<!-- broker -->
 <body>
-  <h1>MQTT</h1>
-  <p>My MQTT Web App</p>
-  
-  <div class="broker">
-    <h1>Broker</h1>
-    <label>Address</label><input type="text" value="ws://broker.hivemq.com:8000/mqtt" id="address"><bR>
-    <button id="btn_connect">connect</button>
-    <button id="btn_Disconnect">Disconnect</button><br>
-    <label>Status</label><div id="status"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <div id="publisher"><h1>Broker</h1></div>
+          <input class="form-control" type="text" id="address" value="ws://broker.hivemq.com:8000/mqtt">
+          <button class="btn" id="btn_connect">Connect</button>
+          <button class="btn" id="btn_Disconnect">DisConnect</button>
+
+          <div id="status" >status</div>
+        </div>
+
+      <div class="col-sm-4" >       
+        <div class="shadow-lg   rounded" >
+          <div id="publisher"><h1>Publisher</h1></div>
+            <input class="form-control" type="text" placeholder="Topic" id="topic_receive">
+            <input class="form-control" type="text" placeholder="Payload" id="payload">
+            <button class="btn" id="btn_publish">Publish</button>
+        </div>
+      </div>
+      <div class="col-sm-4" >
+        
+      </div>
+      <div class="col-sm-4">
+        <div class="shadow-lg  rounded">
+          <div id="Subscriber"><h1>Subscriber</h1></div>
+            <input class="form-control" type="text" placeholder="Topic" id="topic_give">
+            <button class="btn" id="btn_subscribe">Subscribe</button>
+            <button class="btn" id="btn_unsubscribe">Unsubs</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-<!-- publisher -->
-  <div class="publisher">
-      <h1>publisher</h1>
-      <label>Topic</label><Br><input type="text"  id="topic_receive"><bR>
-        <label>payload</label><input type="text"id="payload"><bR>
-      <button id="btn_publish">Publish</button>      
-    </div>
-
-
-<!-- subscriber -->
-  <div class="subscriber">
-      <h1>subscriber</h1>
-      <label>Topic</label><Br><input type="text"  id="topic_give"><bR>       
-      <button id="btn_subscribe">subscribe</button>
-      <button id="btn_unsubscribe">unsubscribe</button>
-    </div>
 </body>
 <script src="scripts/browserMqtt.js"></script>
-<script src="scripts/controller.js"></script>
-
+<script src="scripts/controller.js"></script> 
 </html>
